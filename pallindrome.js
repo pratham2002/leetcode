@@ -1,16 +1,10 @@
 var isPalindrome = function (x) {
   x = `${x}`;
-  let left = 0;
-  let right = x.length - 1;
-
-  while (left < right) {
-    if (x[left] !== x[right]) {
-      return false;
-    }
-    left++;
-    right--;
+  let rev = "";
+  for (let i = x.length - 1; i >= 0; i--) {
+    rev = rev + x[i];
   }
-  return true;
+  return rev === x;
 };
 
 console.log(isPalindrome(-121));
