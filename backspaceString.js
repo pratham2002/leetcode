@@ -1,4 +1,4 @@
-function backspaceCompare(s, t) {
+var backspaceCompare = function (s, t) {
   let stack1 = [];
   let stack2 = [];
   let backspaceChar = "#";
@@ -19,7 +19,7 @@ function backspaceCompare(s, t) {
       stack2.push(element);
     }
   }
-  return stack1.length === stack2.length;
-}
+  return stack1.join("") === stack2.join("");
+};
 
 console.log(backspaceCompare("ab##", "c#d#"));
