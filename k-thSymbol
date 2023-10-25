@@ -8,3 +8,4 @@ var kthGrammar = function (n, k) {
     return kthGrammar(n - 1, Math.floor((k + 1) / 2));
   }
 };
+console.log(kthGrammar(5, 2));
