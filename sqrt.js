@@ -1,14 +1,17 @@
 var mySqrt = function (x) {
-  let ans = 0;
-  for (let i = 1; i <= x; i++) {
-    let val = i * i;
-    if (val <= x) {
-      ans = i;
+  let low = 1,
+    high = x;
+
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+    if (mid * mid <= x) {
+      low = mid + 1;
     } else {
-      break;
+      high = mid - 1;
     }
   }
-  return ans;
+
+  return high;
 };
 
 console.log(mySqrt(0));
