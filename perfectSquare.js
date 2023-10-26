@@ -1,15 +1,20 @@
 var isPerfectSquare = function (num) {
-  let ans = false;
+  let low = 1,
+    high = num;
 
-  for (let i = 0; i <= num; i++) {
-    if (i * i == num) {
-      ans = true;
-    }
-    if (i * i > num) {
-      break;
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+
+    if (mid * mid == num) {
+      return true;
+    } else if (mid * mid > num) {
+      high = mid - 1;
+    } else if (mid * mid < num) {
+      low = mid + 1;
     }
   }
-  return ans;
+
+  return false;
 };
 
-console.log(isPerfectSquare(16));
+console.log(isPerfectSquare(14));
